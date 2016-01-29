@@ -11,22 +11,25 @@ namespace ECS {
      */
     class EntityId {
     public:
+        /** The Type to use for an Entity ID */
+        typedef uint64_t idType;
+
         /**
          * Construct the Entity ID
          * @param id The actual ID to use
          */
-        explicit EntityId(const uint64_t id) : id_(id) {}
+        explicit EntityId(const idType id) : id_(id) {}
         /**
          * Get the actual ID
          * @return the actual ID
          */
-        uint64_t id() const {
+        idType id() const {
             return id_;
         }
     protected:
     private:
         /** The actual ID of the Entity */
-        const uint64_t id_;
+        const idType id_;
     };
 
     /**

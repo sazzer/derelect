@@ -6,18 +6,18 @@ using namespace bandit;
 go_bandit([](){
     describe("ECS::EntityId", [&]() {
         it("Should return the ID it was constructed with", [&]() {
-            uint64_t id = 1234;
+            ECS::EntityId::idType id = 1234;
             ECS::EntityId entityId(id);
             AssertThat(entityId.id(), Equals(id));
         });
         it("Should copy correctly", [&]() {
-            uint64_t id = 1234;
+            ECS::EntityId::idType id = 1234;
             ECS::EntityId entityId(id);
             ECS::EntityId entityId2(entityId);
             AssertThat(entityId2.id(), Equals(id));
         });
         it("Should copy-assign correctly", [&]() {
-            uint64_t id = 1234;
+            ECS::EntityId::idType id = 1234;
             ECS::EntityId entityId(id);
             ECS::EntityId entityId2 = entityId;
             AssertThat(entityId2.id(), Equals(id));

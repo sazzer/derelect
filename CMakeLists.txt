@@ -8,10 +8,13 @@ ADD_DEFINITIONS(-Wall -Wextra -pedantic -Wshadow -Werror)
 
 ADD_LIBRARY(game
     src/game/main/ecs/entityId.cpp
+    src/game/main/ecs/entityManager.cpp
     src/game/main/entrypoint.cpp)
 ADD_EXECUTABLE(game_test
     external/bandit/specs/main.cpp
-    src/game/test/ecs/entityId_test.cpp)
+    src/game/test/ecs/entityId_test.cpp
+    src/game/test/ecs/entityManager_test.cpp
+)
 TARGET_LINK_LIBRARIES(game_test PRIVATE game)
 TARGET_INCLUDE_DIRECTORIES(game_test PRIVATE src/game/main)
 TARGET_INCLUDE_DIRECTORIES(game_test PRIVATE external/bandit)
